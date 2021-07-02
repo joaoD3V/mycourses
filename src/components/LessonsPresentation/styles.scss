@@ -1,0 +1,53 @@
+.content{
+  max-width: 1120px;
+  margin: 0 auto;
+  // padding-top: 0.5rem;
+
+  .title{
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 2rem;
+  }
+
+  .text-information {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .lessons{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    
+    iframe{
+      width: 60%;
+      height: auto;
+    }
+
+
+    .lesson-list{
+      height: 25rem;
+      width: 25rem;
+      background: var(--background-dark);
+      border-radius: 0.5rem;
+
+      display: flex;
+      flex-direction: column;
+
+      button{
+        height: 3.5rem;
+        background: var(--button-dark);
+        border: 0;
+
+        color: var(--text-primary);
+        font-size: 1rem;
+
+        & + button{
+          border-top: 3px solid var(--background-dark);
+        }
+      }
+    }
+  }
+}
