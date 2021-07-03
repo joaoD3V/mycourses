@@ -5,13 +5,14 @@ type ModuleModel = {
   id: number;
   name: string;
   isSelected: boolean;
-  lessons: Lesson[];
+  lessons: LessonModel[];
 }
 
-type Lesson = {
+type LessonModel = {
   id: number;
   name: string;
   videoURL: string;
+  isSelected: boolean;
   startLessonDate: Date;
 }
 

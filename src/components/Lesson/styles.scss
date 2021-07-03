@@ -1,0 +1,36 @@
+.lesson{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start !important;
+  padding-left: 1.5rem;
+  text-align: left;
+
+  &:first-child{
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+
+  height: 3.5rem;
+  background: var(--module-selected);
+  border: 0;
+
+  color: var(--text-primary);
+  font-size: 0.75rem;
+
+  transition: filter 0.2s;
+
+  & + button{
+    margin-top: 0.25rem;
+    border-top: 1px solid var(--background-dark);
+    border-bottom: 1px solid var(--background-dark);
+  }
+
+  &:hover{
+    filter: brightness(0.9);
+  }
+
+  &.selected{
+    background: var(--background-dark);
+    border: 1px solid var(--text-primary);
+  }
+}

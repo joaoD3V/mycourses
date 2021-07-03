@@ -24,30 +24,30 @@
     iframe{
       width: 60%;
       height: auto;
+      max-height: 25rem;
     }
 
-
-    .lesson-list{
-      height: 25rem;
-      width: 25rem;
-      background: var(--background-dark);
-      border-radius: 0.5rem;
-
+    .lessons-information{
       display: flex;
       flex-direction: column;
 
-      button{
-        height: 3.5rem;
-        background: var(--button-dark);
-        border: 0;
-
+      span{
         color: var(--text-primary);
-        font-size: 1rem;
+        margin-bottom: 0.25rem;
+        align-self: flex-end;
+      }
 
-        & + button{
-          border-top: 3px solid var(--background-dark);
-        }
+      .lesson-list{
+        min-height: 25rem;
+        width: 25rem;
+        background: var(--background-dark);
+        border-radius: 0.5rem;
+        overflow-y: 'scroll';
+  
+        display: flex;
+        flex-direction: column;
       }
     }
+
   }
 }

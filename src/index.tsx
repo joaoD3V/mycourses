@@ -15,7 +15,7 @@ createServer({
       modules: [
         {
           id: 1,
-          name: 'Introdução e Preparatório',
+          name: 'Introdução e Preparatório ao sistema financeiro e interesse compartilhados e únicos para compartilhamento',
           lessons: [
             {
               id: 1,
@@ -26,13 +26,55 @@ createServer({
             {
               id: 2,
               name: 'Cacto',
-              videoURL: 'https://www.youtube.com/watch?v=UYXG1ZGeY0w',
+              videoURL: 'https://www.youtube.com/embed/v4-oN2yQ8Dw',
               startLessonDate: new Date()
             },
             {
               id: 3,
-              name: 'Abacate',
-              videoURL: 'https://www.youtube.com/watch?v=Qj9SFHZF8tc',
+              name: 'Introdução e Preparatório ao sistema financeiro e interesse compartilhados e únicos para compartilhamento',
+              videoURL: 'https://www.youtube.com/embed/9iAoMayWblo',
+              startLessonDate: new Date()
+            },
+            {
+              id: 4,
+              name: 'Pêra',
+              videoURL: 'https://www.youtube.com/embed/9iAoMayWblo',
+              startLessonDate: new Date()
+            },
+            {
+              id: 5,
+              name: 'Uva',
+              videoURL: 'https://www.youtube.com/embed/9iAoMayWblo',
+              startLessonDate: new Date()
+            },
+            {
+              id: 6,
+              name: 'Maçã',
+              videoURL: 'https://www.youtube.com/embed/9iAoMayWblo',
+              startLessonDate: new Date()
+            },
+            {
+              id: 7,
+              name: 'Amora',
+              videoURL: 'https://www.youtube.com/embed/9iAoMayWblo',
+              startLessonDate: new Date()
+            },
+            {
+              id: 8,
+              name: 'Goiaba',
+              videoURL: 'https://www.youtube.com/embed/9iAoMayWblo',
+              startLessonDate: new Date()
+            },
+            {
+              id: 9,
+              name: 'Passas',
+              videoURL: 'https://www.youtube.com/embed/9iAoMayWblo',
+              startLessonDate: new Date()
+            },
+            {
+              id: 10,
+              name: 'Melão',
+              videoURL: 'https://www.youtube.com/embed/9iAoMayWblo',
               startLessonDate: new Date()
             },
           ]
@@ -50,13 +92,19 @@ createServer({
             {
               id: 2,
               name: 'Cacto',
-              videoURL: 'https://www.youtube.com/watch?v=UYXG1ZGeY0w',
+              videoURL: 'https://www.youtube.com/embed/v4-oN2yQ8Dw',
               startLessonDate: new Date()
             },
             {
               id: 3,
               name: 'Abacate',
-              videoURL: 'https://www.youtube.com/watch?v=Qj9SFHZF8tc',
+              videoURL: 'https://www.youtube.com/embed/9iAoMayWblo',
+              startLessonDate: new Date()
+            },
+            {
+              id: 4,
+              name: 'Banana',
+              videoURL: 'https://www.youtube.com/embed/9iAoMayWblo',
               startLessonDate: new Date()
             },
           ]
@@ -74,13 +122,13 @@ createServer({
             {
               id: 2,
               name: 'Cacto',
-              videoURL: 'https://www.youtube.com/watch?v=UYXG1ZGeY0w',
+              videoURL: 'https://www.youtube.com/embed/v4-oN2yQ8Dw',
               startLessonDate: new Date()
             },
             {
               id: 3,
               name: 'Abacate',
-              videoURL: 'https://www.youtube.com/watch?v=Qj9SFHZF8tc',
+              videoURL: 'https://www.youtube.com/embed/9iAoMayWblo',
               startLessonDate: new Date()
             },
           ]
