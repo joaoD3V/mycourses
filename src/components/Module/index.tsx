@@ -18,7 +18,7 @@ export function Module({title, videoQuantity, isSelected, ...props}: ModuleProps
       {...props}
     >
     <h4>{title}</h4>
-    <span>{videoQuantity} aulas</span>
+    <span>{videoQuantity > 1 ? `${videoQuantity} aulas` : `${videoQuantity} aula`}</span>
      
    </button>
   );

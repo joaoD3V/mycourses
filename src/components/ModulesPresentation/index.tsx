@@ -3,8 +3,9 @@ import { Module } from '../Module';
 import './styles.scss';
 
 
+
 export function ModulesPresentation(){
-  const { modules, handleSelectModule } = useModules();
+  const { modules, handleSumModuleLessons, handleSelectModule } = useModules();
 
   return(
     <>
@@ -18,7 +19,7 @@ export function ModulesPresentation(){
               <Module 
                 key={module.id}
                 title={module.name} 
-                videoQuantity={module.lessons.length}
+                videoQuantity={handleSumModuleLessons(module.id)}
                 isSelected={module.isSelected}
                 onClick={() => handleSelectModule(module.id)}
               />
