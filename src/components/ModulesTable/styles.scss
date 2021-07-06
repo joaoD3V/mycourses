@@ -1,0 +1,31 @@
+
+.module-form{
+  margin-bottom: 1rem;
+
+  input{
+    width: 15rem;
+
+  }
+}
+
+.modules-table{
+  
+  th{
+    background: var(--module-selected);
+    color: var(--text-primary);
+    padding: 0.25rem;
+    font-weight: 500;
+  }
+
+  td{
+    background: var(--module);
+    color: var(--text-primary);
+
+    button{
+      border: 0;
+      width: 100%;
+      background: transparent;
+    }
+  }
+  
+}

@@ -89,7 +89,7 @@ export function ModuleContextProvider(props: ModuleContextProviderProps){
     getLessons();
     getModules();
 
-  }, []);
+  }, [modules]);
 
 
   function handleSelectLesson(id: number){
