@@ -56,6 +56,12 @@ Sistema Web de cadastro e exibição de módulos e aulas, com a finalidade de de
 - O projeto foi desenvolvido em um ambiente Linux (Ubuntu).
 
 ------------
+### Acesso ao Painel Administrativo através do login
+- E-mail: admin@mycourses.com.br
+
+- Senha: 12345678
+
+------------
 
 ### Instalação e Execução
 
