@@ -53,6 +53,7 @@ Sistema Web de cadastro e exibição de módulos e aulas, com a finalidade de de
 - Acabei cometendo um erro referente ao loop do UseEffect, relacionado a observação de mudanças de estado dos módulos.
 - Não foi implementado o armazenamento do token gerado após o login no localStorage/cookie.
 - Não foi implementado no sistema a responsividade.
+- O projeto foi desenvolvido em um ambiente Linux (Ubuntu).
 
 ------------
 
