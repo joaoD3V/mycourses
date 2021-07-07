@@ -1,46 +1,76 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##### Desafio Verzel - Sistema de Cadastro e Exibição de Módulos e Aulas
 
-## Available Scripts
+# My Courses - Frontend
 
-In the project directory, you can run:
+Sistema Web de cadastro e exibição de módulos e aulas, com a finalidade de deixar os mesmos mais acessíveis para a consulta e mais prático para cadastro pelo administrador.
 
-### `yarn start`
+------------
+### Requisitos do Sistema
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[ X ] Home page pública exibindo os módulos e conforme seleciona o módulo, exibe as aulas do módulo;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[ X ] Os módulos devem estar ordenados por ordem alfabética assim como as aulas;
 
-### `yarn test`
+[ X ] Os módulos devem contabilizar o total de aulas referente;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[ X ] Para cadastro das aulas e módulos, deverá haver um login administrativo;
 
-### `yarn build`
+[ ] As páginas de cadastros devem estar seguras e só acessadas após login autenticado;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[ X ] Todas as requisições privadas precisam de um token válido gerado no login para funcionamento da requisição;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[  ] O cadastro de aulas deverá ter listagem, criação e deleção de registros;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[ X ] Os atributos obrigatórios para a aula são: Id, Nome, Módulo e data que acontecerá a aula;
 
-### `yarn eject`
+[ X ] O cadastro de módulos deverá ter listagem, criação e deleção de registros ;
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[ X ] Os atributos obrigatórios para o módulo são: Id, e Nome;
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[ X ] O Backend deverá ser uma API Rest;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[ X ] Todos os dados devem ser persistidos no banco de dados;
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+------------
 
-## Learn More
+### Tecnologias usadas durante o desafio
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **React.js**: lib para a construção de interfaces frontend.
+- **TypeScript**: superset para o JavaScript.
+- **Axios**: para requisições http com o backend.
+- **Classnames**: para a implementação de classe condicionais.
+- **SASS**: para a estilização dos componentes.
+- **ContextAPI**: para o compartilhamento de estado entre componentes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+------------
+
+### Observação
+
+- Execute o backend antes do frontend para que o sistema possa ter o funcionamento conforme esperado. O backend está rodando na porta 3333.
+- Para a visualização da tabela de aulas referentes de um módulo no painel administrativo, basta clicar em cima do nome do módulo que a tabela será exibida embaixo.
+- Não foi implementado o CRUD de forma completa referente as aulas;
+- Acabei cometendo um erro referente ao loop do UseEffect, relacionado a observação de mudanças de estado dos módulos.
+- Não foi implementado o armazenamento do token gerado após o login no localStorage/cookie.
+- Não foi implementado no sistema a responsividade.
+
+------------
+
+### Instalação e Execução
+
+**Instalação das dependências**
+```
+yarn
+```
+
+**Execução em ambiente de desenvolvimento**
+
+```
+yarn start
+```
+
+**Execução em ambiente de produção**
+
+```
+yarn build
+```
