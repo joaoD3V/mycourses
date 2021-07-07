@@ -33,6 +33,10 @@ type ModuleContexType = {
   handleSumModuleLessons: (id: number) => number;
   handleSelectModule: (id: number) => void;
   handleSelectLesson: (id: number) => void;
+  handleConvertModuleIdInModuleName: (id: number) => string | undefined;
+  handleConvertModuleNameInModuleId: (name: string) => number | undefined;
+  getModules: () => Promise<void>;
+  getLessons: () => Promise<void>;
 }
 
 export const ModuleContext = createContext({} as ModuleContexType);
@@ -65,7 +69,6 @@ export function ModuleContextProvider(props: ModuleContextProviderProps){
         throw new Error('Erro ao buscar informações no Banco de Dados')
       }
     }
-
     async function getLessons(){
       try{
         const response = await api.get('lesson');
@@ -91,6 +94,48 @@ export function ModuleContextProvider(props: ModuleContextProviderProps){
 
   }, [modules]);
 
+
+  async function getModules(){
+    try{
+      const response = await api.get('module');
+      const dataModules = response.data;
+      const newModule = dataModules.map((module: ModuleModel) => {
+        const newModule = {...module, isSelected: false};
+        return newModule;
+      })
+
+      newModule.sort((a: Sort, b: Sort) => {
+                if(a.name < b.name) { return -1; }
+                if(a.name > b.name) { return 1; }
+                return 0;
+      });
+
+      setModules(newModule);
+    } catch {
+      throw new Error('Erro ao buscar informações no Banco de Dados')
+    }
+  }
+
+  async function getLessons(){
+    try{
+      const response = await api.get('lesson');
+      const dataLessons = response.data;
+      const newLesson = dataLessons.map((lesson: LessonModel) => {
+        const newLesson = {...lesson, isSelected: false};
+        return newLesson;
+      })
+
+      newLesson.sort((a: Sort, b: Sort) => {
+                if(a.name < b.name) { return -1; }
+                if(a.name > b.name) { return 1; }
+                return 0;
+      });
+
+      setLessons(newLesson);
+    } catch {
+      throw new Error('Erro ao buscar informações no Banco de Dados')
+    }
+  }
 
   function handleSelectLesson(id: number){
     if(moduleSelectLessons !== undefined){
@@ -122,9 +167,13 @@ export function ModuleContextProvider(props: ModuleContextProviderProps){
         module.isSelected = true;
         setModuleSelect(module);
         const moduleLessons = newLessons.filter(lesson => lesson.id_modules === module.id);
-        moduleLessons[0].isSelected = true;
-        setModuleSelectLessons(moduleLessons);
-        setLessonSelect(moduleLessons[0]);
+        if(moduleLessons.length > 0){
+          moduleLessons[0].isSelected = true;
+          setModuleSelectLessons(moduleLessons);
+          setLessonSelect(moduleLessons[0]);
+        } else {
+          setModuleSelectLessons(undefined);
+        }
       }
     })
 
@@ -140,8 +189,35 @@ export function ModuleContextProvider(props: ModuleContextProviderProps){
     return moduleLessons.length;
   }
 
+  function handleConvertModuleIdInModuleName(id: number){
+    const newModules = [...modules];
+    const moduleName = newModules.find((module: ModuleModel | undefined) => module?.id === id);
+    return moduleName?.name;
+  }
+
+  function handleConvertModuleNameInModuleId(name: string){
+    const newModules = [...modules];
+    const moduleName = newModules.find((module: ModuleModel | undefined) => module?.name === name);
+    return moduleName?.id;
+  }
+
   return (
-    <ModuleContext.Provider value={{modules, lessons, moduleSelectLessons, handleSumModuleLessons, handleSelectModule, handleSelectLesson, lessonSelect, moduleSelect}}>
+    <ModuleContext.Provider value={
+      { 
+        modules, 
+        lessons, 
+        moduleSelectLessons, 
+        handleSumModuleLessons, 
+        handleSelectModule, 
+        handleSelectLesson, 
+        lessonSelect, 
+        moduleSelect, 
+        handleConvertModuleIdInModuleName,
+        handleConvertModuleNameInModuleId,
+        getModules,
+        getLessons
+      }
+    }>
       {props.children}
     </ModuleContext.Provider>
   );

@@ -25,11 +25,8 @@ export function AuthContextProvider(props: AuthContextProviderProps){
   const [tokenAuth, setTokenAuth] = useState<Token>({} as Token);
 
   function handleSetToken(token: Token){
-    console.log(token);
     setTokenAuth(token);
   }
- 
-
 
   return (
     <AuthContext.Provider value={{ tokenAuth, handleSetToken }}>

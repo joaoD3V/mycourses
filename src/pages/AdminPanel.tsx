@@ -1,4 +1,5 @@
 import { Header } from "../components/Header";
+import { LessonsTable } from "../components/LessonsTable";
 import { ModulesTable } from "../components/ModulesTable";
 
 export function AdminPanel(){
@@ -6,6 +7,7 @@ export function AdminPanel(){
     <>
       <Header />
       <ModulesTable />
+      <LessonsTable />
     </>
   );
 }
